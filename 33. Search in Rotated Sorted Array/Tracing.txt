@@ -1,0 +1,45 @@
+def RotatedSearch(nums,target):
+    l,r = 0 , len(nums) - 1
+
+
+    # nums = [2, 3, 4, 10, 40]
+    # target = 10 
+    # l = 0 
+    # h = len(nums) - 1          // 4
+    while(l <= h ):
+        mid = (l + h ) // 2      // 1. ( 0 + 4 ) // 2 -> 2   2. (l = 3 + 4) // 2 -> 3
+        if(nums[mid] == target ):   // 1. (nums[2] == 10 )  2. (nums[3] == 10 ) yes found here
+            return mid          
+    
+        # Check if the left half is Sorted or not
+        if(nums[l] <= nums[mid]:    // 1. (nums[0] <= nums[2])
+           # if sorted it will enter
+           if target > nums[mid]:         // 1. ( 10 > nums[2]
+               l = mid + 1
+           elif(target < nums[l]):         // 1. (10 > nums[0])
+               l = mid + 1                // 1. (10)
+
+            # adjust the right prointer the left half to narrow down the search 
+           else:
+              h = mid - 1
+
+        # Target in the Right half 
+        else:
+                if target < nums[mid] or target > nums[h]: // (10 < nums[2] or 10 > nums[4]
+                    h = mid - 1
+
+		# adjust the left prointer the left half to narrow down the search 
+                else:
+                    l = mid + 1
+        return -1
+
+
+
+
+
+
+
+# If the left half is sorted:
+    # If the target is greater than the element at mid or less than the element at l,
+    # it means the target is not in the sorted left half, so we adjust the left pointer to search in the right half (l = mid + 1).
+    # Otherwise, the target must be in the sorted left half, so we adjust the right pointer to narrow the search to the left half (r = mid - 1).      
