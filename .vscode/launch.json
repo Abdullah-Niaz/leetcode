@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "NiceSubarrays",
+      "request": "launch",
+      "mainClass": "NiceSubarrays",
+      "projectName": "leetcode_e53f4fbf"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
