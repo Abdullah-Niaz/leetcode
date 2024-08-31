@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "index",
+      "request": "launch",
+      "mainClass": "index",
+      "projectName": "leetcode_e53f4fbf"
+    },
+    {
+      "type": "java",
       "name": "NiceSubarrays",
       "request": "launch",
       "mainClass": "NiceSubarrays",
